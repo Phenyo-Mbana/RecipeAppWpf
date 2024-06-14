@@ -1,0 +1,28 @@
+﻿<Window x:Class="RecipeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recipe App" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <!-- Left column, 20% of total width -->
+            <ColumnDefinition Width="80*"/>
+            <!-- Right column, 80% of total width -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left side for buttons -->
+        <StackPanel Grid.Column="0" Margin="20">
+            <UniformGrid Columns="1" VerticalAlignment="Top">
+                <Button Content="Capture Recipe" Height="40" Margin="0,0,0,10" Click="CaptureRecipe_Click"/>
+                <Button Content="View Recipe" Height="40" Margin="0,0,0,10" Click="ViewRecipes_Click"/>
+                <Button Content="Choose Recipe" Height="40" Margin="0,0,0,10" Click="ChooseRecipe_Click"/>
+                <Button Content="Reset Recipe" Height="40" Margin="0,0,0,10" Click="ResetRecipe_Click"/>
+                <Button Content="Clear Recipes" Height="40" Margin="0,0,0,10" Click="ClearRecipes_Click"/>
+                <Button Content="Exit" Height="40" Margin="0,0,0,10" Click="Exit_Click"/>
+            </UniformGrid>
+        </StackPanel>
+
+        <!-- Right side for dynamic display -->
+        <ContentControl Name="DynamicDisplay" Grid.Column="1" Margin="20"/>
+    </Grid>
+</Window>
